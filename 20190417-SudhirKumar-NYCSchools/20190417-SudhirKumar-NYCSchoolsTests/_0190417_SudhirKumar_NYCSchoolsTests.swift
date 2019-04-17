@@ -10,19 +10,28 @@ import XCTest
 @testable import _0190417_SudhirKumar_NYCSchools
 
 class _0190417_SudhirKumar_NYCSchoolsTests: XCTestCase {
-
+    
+    var sut_ViewController : NYCSchoolHomeViewController!
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        guard let viewcontroller = UIStoryboard(name: "Main", bundle: Bundle(for: NYCSchoolHomeViewController.self)).instantiateViewController(withIdentifier: "NYCSchoolHomeViewControllerID") as? NYCSchoolHomeViewController else{
+            return
+        }
+        
+        sut_ViewController = viewcontroller
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testDataProviderExistance(){
+        XCTAssertNotNil(sut_ViewController.dataProvider)
     }
+    
+    
 
     func testPerformanceExample() {
         // This is an example of a performance test case.

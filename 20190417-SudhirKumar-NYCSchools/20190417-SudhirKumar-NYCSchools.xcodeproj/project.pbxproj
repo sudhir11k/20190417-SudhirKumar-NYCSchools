@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		D7A70296226791CD00EF2903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A70295226791CD00EF2903 /* AppDelegate.swift */; };
-		D7A70298226791CD00EF2903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A70297226791CD00EF2903 /* ViewController.swift */; };
+		D7A70298226791CD00EF2903 /* NYCSchoolHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A70297226791CD00EF2903 /* NYCSchoolHomeViewController.swift */; };
 		D7A7029B226791CD00EF2903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A70299226791CD00EF2903 /* Main.storyboard */; };
 		D7A7029D226791CE00EF2903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A7029C226791CE00EF2903 /* Assets.xcassets */; };
 		D7A702A0226791CE00EF2903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A7029E226791CE00EF2903 /* LaunchScreen.storyboard */; };
 		D7A702AB226791CE00EF2903 /* _0190417_SudhirKumar_NYCSchoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702AA226791CE00EF2903 /* _0190417_SudhirKumar_NYCSchoolsTests.swift */; };
+		D7A702C52267AE2200EF2903 /* NYCSchoolDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702C42267AE2200EF2903 /* NYCSchoolDataModel.swift */; };
+		D7A702C82267B04A00EF2903 /* NYCSchoolNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702C72267B04A00EF2903 /* NYCSchoolNetworkProvider.swift */; };
+		D7A702CA2267B19800EF2903 /* NYCSchoolNetworkProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702C92267B19800EF2903 /* NYCSchoolNetworkProviderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +31,7 @@
 /* Begin PBXFileReference section */
 		D7A70292226791CD00EF2903 /* 20190417-SudhirKumar-NYCSchools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "20190417-SudhirKumar-NYCSchools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A70295226791CD00EF2903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D7A70297226791CD00EF2903 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D7A70297226791CD00EF2903 /* NYCSchoolHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolHomeViewController.swift; sourceTree = "<group>"; };
 		D7A7029A226791CD00EF2903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7A7029C226791CE00EF2903 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7A7029F226791CE00EF2903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +39,9 @@
 		D7A702A6226791CE00EF2903 /* 20190417-SudhirKumar-NYCSchoolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "20190417-SudhirKumar-NYCSchoolsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A702AA226791CE00EF2903 /* _0190417_SudhirKumar_NYCSchoolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0190417_SudhirKumar_NYCSchoolsTests.swift; sourceTree = "<group>"; };
 		D7A702AC226791CE00EF2903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7A702C42267AE2200EF2903 /* NYCSchoolDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolDataModel.swift; sourceTree = "<group>"; };
+		D7A702C72267B04A00EF2903 /* NYCSchoolNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolNetworkProvider.swift; sourceTree = "<group>"; };
+		D7A702C92267B19800EF2903 /* NYCSchoolNetworkProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolNetworkProviderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +83,14 @@
 		D7A70294226791CD00EF2903 /* 20190417-SudhirKumar-NYCSchools */ = {
 			isa = PBXGroup;
 			children = (
+				D7A702C62267B02800EF2903 /* Networking */,
 				D7A70295226791CD00EF2903 /* AppDelegate.swift */,
-				D7A70297226791CD00EF2903 /* ViewController.swift */,
+				D7A70297226791CD00EF2903 /* NYCSchoolHomeViewController.swift */,
 				D7A70299226791CD00EF2903 /* Main.storyboard */,
 				D7A7029C226791CE00EF2903 /* Assets.xcassets */,
 				D7A7029E226791CE00EF2903 /* LaunchScreen.storyboard */,
 				D7A702A1226791CE00EF2903 /* Info.plist */,
+				D7A702C42267AE2200EF2903 /* NYCSchoolDataModel.swift */,
 			);
 			path = "20190417-SudhirKumar-NYCSchools";
 			sourceTree = "<group>";
@@ -92,8 +100,17 @@
 			children = (
 				D7A702AA226791CE00EF2903 /* _0190417_SudhirKumar_NYCSchoolsTests.swift */,
 				D7A702AC226791CE00EF2903 /* Info.plist */,
+				D7A702C92267B19800EF2903 /* NYCSchoolNetworkProviderTests.swift */,
 			);
 			path = "20190417-SudhirKumar-NYCSchoolsTests";
+			sourceTree = "<group>";
+		};
+		D7A702C62267B02800EF2903 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D7A702C72267B04A00EF2903 /* NYCSchoolNetworkProvider.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +214,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7A70298226791CD00EF2903 /* ViewController.swift in Sources */,
+				D7A702C52267AE2200EF2903 /* NYCSchoolDataModel.swift in Sources */,
+				D7A70298226791CD00EF2903 /* NYCSchoolHomeViewController.swift in Sources */,
+				D7A702C82267B04A00EF2903 /* NYCSchoolNetworkProvider.swift in Sources */,
 				D7A70296226791CD00EF2903 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7A702CA2267B19800EF2903 /* NYCSchoolNetworkProviderTests.swift in Sources */,
 				D7A702AB226791CE00EF2903 /* _0190417_SudhirKumar_NYCSchoolsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
