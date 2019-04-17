@@ -16,6 +16,8 @@
 		D7A702C52267AE2200EF2903 /* NYCSchoolDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702C42267AE2200EF2903 /* NYCSchoolDataModel.swift */; };
 		D7A702C82267B04A00EF2903 /* NYCSchoolNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702C72267B04A00EF2903 /* NYCSchoolNetworkProvider.swift */; };
 		D7A702CA2267B19800EF2903 /* NYCSchoolNetworkProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702C92267B19800EF2903 /* NYCSchoolNetworkProviderTests.swift */; };
+		D7A702D32267DB2000EF2903 /* NYCSchoolDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702D22267DB2000EF2903 /* NYCSchoolDataProvider.swift */; };
+		D7A702D52267DB3200EF2903 /* NYCSchoolDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702D42267DB3200EF2903 /* NYCSchoolDataProviderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		D7A702C42267AE2200EF2903 /* NYCSchoolDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolDataModel.swift; sourceTree = "<group>"; };
 		D7A702C72267B04A00EF2903 /* NYCSchoolNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolNetworkProvider.swift; sourceTree = "<group>"; };
 		D7A702C92267B19800EF2903 /* NYCSchoolNetworkProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolNetworkProviderTests.swift; sourceTree = "<group>"; };
+		D7A702D22267DB2000EF2903 /* NYCSchoolDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolDataProvider.swift; sourceTree = "<group>"; };
+		D7A702D42267DB3200EF2903 /* NYCSchoolDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolDataProviderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 		D7A70294226791CD00EF2903 /* 20190417-SudhirKumar-NYCSchools */ = {
 			isa = PBXGroup;
 			children = (
+				D7A702CC2267D92000EF2903 /* NYCSchoolDirectory */,
 				D7A702C62267B02800EF2903 /* Networking */,
 				D7A70295226791CD00EF2903 /* AppDelegate.swift */,
 				D7A70297226791CD00EF2903 /* NYCSchoolHomeViewController.swift */,
@@ -101,6 +106,7 @@
 				D7A702AA226791CE00EF2903 /* _0190417_SudhirKumar_NYCSchoolsTests.swift */,
 				D7A702AC226791CE00EF2903 /* Info.plist */,
 				D7A702C92267B19800EF2903 /* NYCSchoolNetworkProviderTests.swift */,
+				D7A702D42267DB3200EF2903 /* NYCSchoolDataProviderTests.swift */,
 			);
 			path = "20190417-SudhirKumar-NYCSchoolsTests";
 			sourceTree = "<group>";
@@ -111,6 +117,14 @@
 				D7A702C72267B04A00EF2903 /* NYCSchoolNetworkProvider.swift */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		D7A702CC2267D92000EF2903 /* NYCSchoolDirectory */ = {
+			isa = PBXGroup;
+			children = (
+				D7A702D22267DB2000EF2903 /* NYCSchoolDataProvider.swift */,
+			);
+			name = NYCSchoolDirectory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7A702D32267DB2000EF2903 /* NYCSchoolDataProvider.swift in Sources */,
 				D7A702C52267AE2200EF2903 /* NYCSchoolDataModel.swift in Sources */,
 				D7A70298226791CD00EF2903 /* NYCSchoolHomeViewController.swift in Sources */,
 				D7A702C82267B04A00EF2903 /* NYCSchoolNetworkProvider.swift in Sources */,
@@ -227,6 +242,7 @@
 			files = (
 				D7A702CA2267B19800EF2903 /* NYCSchoolNetworkProviderTests.swift in Sources */,
 				D7A702AB226791CE00EF2903 /* _0190417_SudhirKumar_NYCSchoolsTests.swift in Sources */,
+				D7A702D52267DB3200EF2903 /* NYCSchoolDataProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,14 +14,25 @@ class NYCSchoolNetworkProviderTests: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         sut = NYCSchoolNetworkProvider()
+        aPIWithIncorrectURL()
+        aPIWithCorrectURL()
+        
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func aPIWithIncorrectURL(){
+        self.testGetResponseFromAPI(url: "https://data.cityofnewyork11.us/resource/s3k6-pzi2.json")
+    }
+    
+    func aPIWithCorrectURL(){
+        self.testGetResponseFromAPI(url: "https://data.cityofnewyork.us/resource/s3k6-pzi2.json")
+    }
 
-    func testGetResponseFromAPI(){
-        let urlStr = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
+    func testGetResponseFromAPI(url:String){
+        let urlStr = url
         
         var suceeded : Bool?
         var retunedError : NYCCustomError?
