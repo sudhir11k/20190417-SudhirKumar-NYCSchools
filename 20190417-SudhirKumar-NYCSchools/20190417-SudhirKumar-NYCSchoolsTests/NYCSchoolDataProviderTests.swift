@@ -28,8 +28,6 @@ class NYCSchoolDataProviderTests: XCTestCase {
     
     func testGetDataFromNetworkCall() {
         
-        //sut.getSchoolDirectory(completionHandler:((([Any]?, NYCCustomError?)->())?)
-        
         let expectation = self.expectation(description: "After Getting Data from Network, Data Model should be ready")
         var isDataModalReady : Bool?
         var retunedError : NYCCustomError?

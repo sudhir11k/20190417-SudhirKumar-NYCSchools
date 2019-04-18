@@ -9,7 +9,7 @@
 import Foundation
 
 protocol NYCSchoolManagerProtocol {
-    func getSchoolDirectoryList(completionHandler : @escaping ([NYCSchoolDirectoryViewModelProtocol]?, NYCCustomError?) -> ())
+    func getSchoolDirectoryList(completionHandler : @escaping (NYCSchoolDiretoryDataSource?, NYCCustomError?) -> ())
 }
 
 class NYCSchoolManager : NYCSchoolManagerProtocol{
@@ -17,23 +17,32 @@ class NYCSchoolManager : NYCSchoolManagerProtocol{
     var dataProvider : NYCSchoolDataProviderProtocol?
     var dirctoryVMList : [NYCSchoolDirectoryFactoryProtocol]?
     
-    init(withDataProvider dataProvider: NYCSchoolDataProviderProtocol = NYCSchoolDataProvider()) {
+    var dataSource : NYCSchoolDiretoryDataSource?
+    
+    init(withDataProvider dataProvider: NYCSchoolDataProviderProtocol = NYCSchoolDataProvider(), withDataSource dataSource :NYCSchoolDiretoryDataSource = NYCSchoolDiretoryDataSource() ) {
         self.dataProvider = dataProvider
+        self.dataSource = dataSource
     }
     
-    func getSchoolDirectoryList(completionHandler: @escaping ([NYCSchoolDirectoryViewModelProtocol]?, NYCCustomError?) -> ()) {
+    func getSchoolDirectoryList(completionHandler: @escaping (NYCSchoolDiretoryDataSource?, NYCCustomError?) -> ()) {
         self.dataProvider?.getSchoolDirectory(completionHandler: { (vmModelList, customError) in
             guard customError == nil else{
                 completionHandler(nil, NYCCustomError.error(descritption: "getSchoolDirectoryList returned Error"))
                 return
             }
-            guard let vmModalList = vmModelList as? [NYCSchoolDirectoryViewModelProtocol]? else {
+            guard let vmModal_List = vmModelList as? [NYCSchoolDirectoryViewModelProtocol]?, (vmModal_List?.count ?? 0) > 0 else {
                 completionHandler(nil, NYCCustomError.error(descritption: "View Modal Assignment Error"))
                 return
             }
-            
-            completionHandler(vmModalList, nil)
+        
+            self.getDataSourceForTableView(withVMList: vmModal_List ?? [], completionHandler: completionHandler)
         })
+    }
+    
+    func getDataSourceForTableView(withVMList vmList:[NYCSchoolDirectoryViewModelProtocol], completionHandler : @escaping (NYCSchoolDiretoryDataSource?, NYCCustomError?) -> ()){
+        
+        self.dataSource?.directoryVMList = vmList
+        completionHandler(self.dataSource, nil)
     }
     
 }

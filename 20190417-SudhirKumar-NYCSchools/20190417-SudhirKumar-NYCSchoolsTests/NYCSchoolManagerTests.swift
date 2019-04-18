@@ -13,16 +13,16 @@ import XCTest
 class NYCSchoolManagerTests: XCTestCase {
 
     var sut : NYCSchoolManager?
-    var helperDataProvider : NYCSchoolDataProviderTests?
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        helperDataProvider = NYCSchoolDataProviderTests()
-        helperDataProvider?.initiateDataProvider()
-        
-        if let dataProvider = helperDataProvider?.sut{
-             sut = NYCSchoolManager.init(withDataProvider:dataProvider)
-        }
+
+        let networkProvider = NYCSchoolNetworkProvider.init()
+        let factoryProvider = NYCSchoolDirectoryFactory.init()
+        let dataProvider = NYCSchoolDataProvider.init(withNetworkProvider: networkProvider, withFactoryProvider : factoryProvider)
+    
+        sut = NYCSchoolManager.init(withDataProvider:dataProvider)
+    
        
     }
 
@@ -41,13 +41,13 @@ class NYCSchoolManagerTests: XCTestCase {
         sut?.getSchoolDirectoryList(completionHandler: { (directoryVmList, customError) in
             testError = customError
             
-            if directoryVmList != nil && ((directoryVmList?.count ?? 0) > 0){
+            if directoryVmList != nil {
                 isManagerHasViewModal = true
             }
             expectation_GetDirVMList.fulfill()
         })
         
-        waitForExpectations(timeout: 30, handler: nil)
+        waitForExpectations(timeout: 20, handler: nil)
         
         if (testError != nil) {
             XCTAssert(testError != nil, testError?.localizedDescription ?? "Error test_getSchoolDirectoryList")
