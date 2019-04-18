@@ -12,10 +12,8 @@ protocol NYCSchoolDataProviderProtocol {
     func getSchoolDirectory(completionHandler:@escaping(([NYCSchoolDataModel]?, NYCCustomError?)->()))
 }
 class NYCSchoolDataProvider: NYCSchoolDataProviderProtocol {
-    
-    
-    
     var newtorkProvider : NYCSchoolNetworkProviderProtocol?
+    
     public init(withNetworkProvider networkProvider: NYCSchoolNetworkProviderProtocol = NYCSchoolNetworkProvider()) {
         self.newtorkProvider = networkProvider
     }

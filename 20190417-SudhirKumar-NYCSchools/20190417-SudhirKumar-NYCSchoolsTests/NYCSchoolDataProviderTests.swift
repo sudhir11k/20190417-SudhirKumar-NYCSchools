@@ -13,6 +13,10 @@ class NYCSchoolDataProviderTests: XCTestCase {
     var sut : NYCSchoolDataProviderProtocol?
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        initiateDataProvider()
+    }
+    
+    func initiateDataProvider(){
         let networkProvider = NYCSchoolNetworkProvider.init()
         sut = NYCSchoolDataProvider.init(withNetworkProvider: networkProvider)
     }
@@ -46,7 +50,7 @@ class NYCSchoolDataProviderTests: XCTestCase {
             XCTFail("Could not returned Data Model")
         }else{
             if let isDataModal_Ready = isDataModalReady {
-                isDataModal_Ready ? XCTAssert(isDataModal_Ready, "Data Received") : XCTAssert(isDataModal_Ready, "Data NOT Received")
+                isDataModal_Ready ? XCTAssertTrue(isDataModal_Ready, "Data Received") : XCTAssertFalse(isDataModal_Ready, "Data NOT Received")
             }else{
                 XCTFail("Could not returned Data Model")
             }
