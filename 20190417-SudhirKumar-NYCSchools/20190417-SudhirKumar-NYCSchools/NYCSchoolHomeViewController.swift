@@ -19,11 +19,11 @@ class NYCSchoolHomeViewController: UIViewController , NYCSchoolDataSourceDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "NYC School List"
-
+        
         
         var directoryVMList : [NYCSchoolDirectoryViewModelProtocol]?
         var satDataVMList : [NYCSchoolSATViewModelProtocol]?
-       
+        
         
         DispatchQueue.global(qos: .userInitiated).async {
             var storedError: NSError?
@@ -83,7 +83,7 @@ class NYCSchoolHomeViewController: UIViewController , NYCSchoolDataSourceDelegat
                 self.selectedSatDataVM = satData
                 self.performSegue(withIdentifier: "ShowSATData", sender: self)
             }
-           
+            
         }
         
     }

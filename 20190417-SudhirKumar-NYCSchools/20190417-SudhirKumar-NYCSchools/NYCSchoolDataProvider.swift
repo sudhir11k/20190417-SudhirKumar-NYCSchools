@@ -22,6 +22,9 @@ class NYCSchoolDataProvider: NYCSchoolDataProviderProtocol {
         self.directoryFactoryProvider = factoryProvider
     }
     
+    /// DescriptiongetSchoolDirectory - will generate callback handler with "NYC School Directory ViewModal" and Error if any
+    ///
+    /// - Parameter completionHandler: completionHandler description can return DirectoryView Modal or Error
     func getSchoolDirectory(completionHandler: @escaping((([NYCSchoolDirectoryViewModelProtocol]?, NYCCustomError?) -> ()))) {
         self.newtorkProvider?.callingNYCSchoolServiceApi(NYCSchoolUrl.schoolDirectory.urlPath, completionHandler: { (data, customError, isSuccess) in
             if isSuccess{
@@ -44,6 +47,10 @@ class NYCSchoolDataProvider: NYCSchoolDataProviderProtocol {
         })
         
     }
+    
+    /// getSchoolSATData - will generate callback handler with "NYC School SAT SCORE ViewModal" and Error if any
+    ///
+    /// - Parameter completionHandler: completionHandler description can return  SATScoreViewModal or Error
     
     func getSchoolSATData(completionHandler: @escaping (([NYCSchoolSATViewModelProtocol]?, NYCCustomError?) -> ())) {
         self.newtorkProvider?.callingNYCSchoolServiceApi(NYCSchoolUrl.dataSAT.urlPath, completionHandler: { (data, customError, isSuccess) in

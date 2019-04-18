@@ -25,6 +25,10 @@ class NYCSchoolManager : NYCSchoolManagerProtocol{
         self.dataSource = dataSource
     }
 
+    
+    /// getSchoolDirectoryList - To return the callback handler with ViewModal array to caller
+    ///
+    /// - Parameter completionHandler: it will have [NYCSchoolDirectoryViewModelProtocol] or error at time
     func getSchoolDirectoryList(completionHandler: @escaping ([NYCSchoolDirectoryViewModelProtocol]?, NYCCustomError?) -> ()) {
         self.dataProvider?.getSchoolDirectory(completionHandler: { (vmModelList, customError) in
             guard customError == nil else{
@@ -36,11 +40,12 @@ class NYCSchoolManager : NYCSchoolManagerProtocol{
                 return
             }
             completionHandler(vmModal_List,nil)
-            //self.getDataSourceForTableView(withVMList: vmModal_List ?? [], completionHandler: completionHandler)
         })
     }
     
-    
+    /// getSatDataList - To return the callback handler with ViewModal array to caller
+    ///
+    /// - Parameter completionHandler: it will have [NYCSchoolSATViewModelProtocol] or error at time
     func getSatDataList(completionHandler: @escaping ([NYCSchoolSATViewModelProtocol]?, NYCCustomError?) -> ()) {
         self.dataProvider?.getSchoolSATData(completionHandler: { (satVmList, error) in
             guard error == nil else{
@@ -55,7 +60,9 @@ class NYCSchoolManager : NYCSchoolManagerProtocol{
         })
     }
     
-    
+    /// getSatDataList - To return the Data Source for the UITableView
+    ///
+    /// - Parameter completionHandler: it will have [NYCSchoolDirectoryViewModelProtocol] or error at time
     func getDataSourceForTableView(withDirectoryVMList vmList:[NYCSchoolDirectoryViewModelProtocol], withSATVMList satDataVMList: [NYCSchoolSATViewModelProtocol], completionHandler : @escaping (NYCSchoolDiretoryDataSource?, NYCCustomError?) -> ()){
         self.dataSource?.directoryVMList = vmList
         self.dataSource?.satDataVMList = satDataVMList

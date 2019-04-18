@@ -11,6 +11,7 @@ import Foundation
 
 // Directory View Modal
 
+
 protocol NYCSchoolDirectoryViewModelProtocol{
     var school_name : String {get}
     var dbn : String {get}
@@ -70,6 +71,10 @@ protocol NYCSchoolDirectoryFactoryProtocol {
 
 class NYCSchoolDirectoryFactory : NYCSchoolDirectoryFactoryProtocol{
     
+    /// generateDirectoryViewModel - Factory method to create ViewModal using DataModal
+    ///
+    /// - Parameter dataModel: NYCSchoolDataModel which has School Directory information
+    /// - Returns: return Array of SchoolDirectory ViewModal [NYCSchoolDirectoryViewModelProtocol]
     func generateDirectoryViewModel(withDataModel dataModel: [NYCSchoolDataModel]) -> [NYCSchoolDirectoryViewModelProtocol] {
         
         var directoryViewModalArr : [NYCSchoolDirectoryViewModelProtocol] = []
@@ -81,6 +86,10 @@ class NYCSchoolDirectoryFactory : NYCSchoolDirectoryFactoryProtocol{
         return directoryViewModalArr
     }
     
+    /// generateSATDATAViewModel - Factory method to create ViewModal using DataModal
+    ///
+    /// - Parameter dataModel: NYCSchoolSatDataModal which has Score information
+    /// - Returns: return Array of SATDATA ViewModal [NYCSchoolSATViewModelProtocol]
     func generateSATDATAViewModel(withDataModel dataModel: [NYCSchoolSatDataModal]) -> [NYCSchoolSATViewModelProtocol] {
         
         var satDataViewModalArr : [NYCSchoolSATViewModelProtocol] = []

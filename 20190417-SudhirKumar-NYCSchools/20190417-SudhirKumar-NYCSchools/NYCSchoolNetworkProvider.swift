@@ -33,6 +33,12 @@ enum NYCSchoolUrl : String{
 }
 
 class NYCSchoolNetworkProvider: NYCSchoolNetworkProviderProtocol {
+    
+    /// callingNYCSchoolServiceApi - Used to call Network call
+    ///
+    /// - Parameters:
+    ///   - urlString: will be in String form
+    ///   - completionHandler: callback Handler to return the control to Caller
     func callingNYCSchoolServiceApi(_ urlString: String, completionHandler: @escaping ((Data?, NYCCustomError?, Bool) -> ())) {
         
         guard let url = URL(string: urlString) else{
