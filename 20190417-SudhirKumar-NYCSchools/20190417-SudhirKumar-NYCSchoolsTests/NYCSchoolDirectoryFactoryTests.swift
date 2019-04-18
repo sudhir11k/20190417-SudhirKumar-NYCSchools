@@ -38,7 +38,7 @@ class NYCSchoolDirectoryFactoryTests: XCTestCase {
         helperDataProvider?.sut?.getSchoolDirectory(completionHandler: { (dataModelArray, error) in
             testError = error
             if testError == nil{
-                if let dataModel_Array = dataModelArray{
+                if let dataModel_Array = dataModelArray as? [NYCSchoolDataModel]{
                     let dirViewModalArray = self.sut?.generateDirectoryViewModel(withDataModel: dataModel_Array)
                     dirViewModalArray?.count ?? 0 > 0 ? (isViewModelDataCreated = true) : (isViewModelDataCreated = false)
                 }

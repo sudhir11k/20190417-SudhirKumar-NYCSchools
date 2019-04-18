@@ -18,7 +18,8 @@ class NYCSchoolDataProviderTests: XCTestCase {
     
     func initiateDataProvider(){
         let networkProvider = NYCSchoolNetworkProvider.init()
-        sut = NYCSchoolDataProvider.init(withNetworkProvider: networkProvider)
+        let factoryProvider = NYCSchoolDirectoryFactory.init()
+        sut = NYCSchoolDataProvider.init(withNetworkProvider: networkProvider, withFactoryProvider : factoryProvider)
     }
 
     override func tearDown() {

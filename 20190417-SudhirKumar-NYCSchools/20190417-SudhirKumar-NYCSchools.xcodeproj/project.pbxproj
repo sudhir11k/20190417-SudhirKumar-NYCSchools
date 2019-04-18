@@ -20,6 +20,9 @@
 		D7A702D52267DB3200EF2903 /* NYCSchoolDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702D42267DB3200EF2903 /* NYCSchoolDataProviderTests.swift */; };
 		D7A702D72267EE3A00EF2903 /* NYCSchoolDirectoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702D62267EE3A00EF2903 /* NYCSchoolDirectoryFactory.swift */; };
 		D7A702D92267EFA100EF2903 /* NYCSchoolDirectoryFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702D82267EFA100EF2903 /* NYCSchoolDirectoryFactoryTests.swift */; };
+		D7A702DB2267FEF500EF2903 /* NYCSchoolManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702DA2267FEF500EF2903 /* NYCSchoolManager.swift */; };
+		D7A702DD2267FF0D00EF2903 /* NYCSchoolManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702DC2267FF0D00EF2903 /* NYCSchoolManagerTests.swift */; };
+		D7A702E022680D3700EF2903 /* NYCSchoolDiretoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702DF22680D3700EF2903 /* NYCSchoolDiretoryDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		D7A702D42267DB3200EF2903 /* NYCSchoolDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolDataProviderTests.swift; sourceTree = "<group>"; };
 		D7A702D62267EE3A00EF2903 /* NYCSchoolDirectoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolDirectoryFactory.swift; sourceTree = "<group>"; };
 		D7A702D82267EFA100EF2903 /* NYCSchoolDirectoryFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolDirectoryFactoryTests.swift; sourceTree = "<group>"; };
+		D7A702DA2267FEF500EF2903 /* NYCSchoolManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolManager.swift; sourceTree = "<group>"; };
+		D7A702DC2267FF0D00EF2903 /* NYCSchoolManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolManagerTests.swift; sourceTree = "<group>"; };
+		D7A702DF22680D3700EF2903 /* NYCSchoolDiretoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolDiretoryDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,7 @@
 		D7A70294226791CD00EF2903 /* 20190417-SudhirKumar-NYCSchools */ = {
 			isa = PBXGroup;
 			children = (
+				D7A702DE22680CE700EF2903 /* DataSource */,
 				D7A702CC2267D92000EF2903 /* NYCSchoolDirectory */,
 				D7A702C62267B02800EF2903 /* Networking */,
 				D7A70295226791CD00EF2903 /* AppDelegate.swift */,
@@ -112,6 +119,7 @@
 				D7A702C92267B19800EF2903 /* NYCSchoolNetworkProviderTests.swift */,
 				D7A702D42267DB3200EF2903 /* NYCSchoolDataProviderTests.swift */,
 				D7A702D82267EFA100EF2903 /* NYCSchoolDirectoryFactoryTests.swift */,
+				D7A702DC2267FF0D00EF2903 /* NYCSchoolManagerTests.swift */,
 			);
 			path = "20190417-SudhirKumar-NYCSchoolsTests";
 			sourceTree = "<group>";
@@ -129,8 +137,17 @@
 			children = (
 				D7A702D22267DB2000EF2903 /* NYCSchoolDataProvider.swift */,
 				D7A702D62267EE3A00EF2903 /* NYCSchoolDirectoryFactory.swift */,
+				D7A702DA2267FEF500EF2903 /* NYCSchoolManager.swift */,
 			);
 			name = NYCSchoolDirectory;
+			sourceTree = "<group>";
+		};
+		D7A702DE22680CE700EF2903 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D7A702DF22680D3700EF2903 /* NYCSchoolDiretoryDataSource.swift */,
+			);
+			name = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +252,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7A702D32267DB2000EF2903 /* NYCSchoolDataProvider.swift in Sources */,
+				D7A702E022680D3700EF2903 /* NYCSchoolDiretoryDataSource.swift in Sources */,
 				D7A702D72267EE3A00EF2903 /* NYCSchoolDirectoryFactory.swift in Sources */,
 				D7A702C52267AE2200EF2903 /* NYCSchoolDataModel.swift in Sources */,
 				D7A70298226791CD00EF2903 /* NYCSchoolHomeViewController.swift in Sources */,
+				D7A702DB2267FEF500EF2903 /* NYCSchoolManager.swift in Sources */,
 				D7A702C82267B04A00EF2903 /* NYCSchoolNetworkProvider.swift in Sources */,
 				D7A70296226791CD00EF2903 /* AppDelegate.swift in Sources */,
 			);
@@ -247,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7A702DD2267FF0D00EF2903 /* NYCSchoolManagerTests.swift in Sources */,
 				D7A702CA2267B19800EF2903 /* NYCSchoolNetworkProviderTests.swift in Sources */,
 				D7A702D92267EFA100EF2903 /* NYCSchoolDirectoryFactoryTests.swift in Sources */,
 				D7A702AB226791CE00EF2903 /* _0190417_SudhirKumar_NYCSchoolsTests.swift in Sources */,
