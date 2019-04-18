@@ -24,6 +24,7 @@
 		D7A702DD2267FF0D00EF2903 /* NYCSchoolManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702DC2267FF0D00EF2903 /* NYCSchoolManagerTests.swift */; };
 		D7A702E022680D3700EF2903 /* NYCSchoolDiretoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702DF22680D3700EF2903 /* NYCSchoolDiretoryDataSource.swift */; };
 		D7A702E222680E3200EF2903 /* NYCSchoolDiretoryDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702E122680E3200EF2903 /* NYCSchoolDiretoryDataSourceTests.swift */; };
+		D7A702E52268F28C00EF2903 /* NYCSchoolSATDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A702E42268F28C00EF2903 /* NYCSchoolSATDataViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		D7A702DC2267FF0D00EF2903 /* NYCSchoolManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolManagerTests.swift; sourceTree = "<group>"; };
 		D7A702DF22680D3700EF2903 /* NYCSchoolDiretoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolDiretoryDataSource.swift; sourceTree = "<group>"; };
 		D7A702E122680E3200EF2903 /* NYCSchoolDiretoryDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolDiretoryDataSourceTests.swift; sourceTree = "<group>"; };
+		D7A702E42268F28C00EF2903 /* NYCSchoolSATDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolSATDataViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,17 +101,17 @@
 		D7A70294226791CD00EF2903 /* 20190417-SudhirKumar-NYCSchools */ = {
 			isa = PBXGroup;
 			children = (
-				D7A702E32268186300EF2903 /* View */,
-				D7A702DE22680CE700EF2903 /* DataSource */,
-				D7A702CC2267D92000EF2903 /* NYCSchoolDirectory */,
-				D7A702C62267B02800EF2903 /* Networking */,
 				D7A70295226791CD00EF2903 /* AppDelegate.swift */,
 				D7A70297226791CD00EF2903 /* NYCSchoolHomeViewController.swift */,
+				D7A702E42268F28C00EF2903 /* NYCSchoolSATDataViewController.swift */,
+				D7A702C62267B02800EF2903 /* Networking */,
+				D7A702CC2267D92000EF2903 /* NYCSchoolDirectoryManage */,
+				D7A702DE22680CE700EF2903 /* DataSource */,
+				D7A702E32268186300EF2903 /* DataModal */,
 				D7A70299226791CD00EF2903 /* Main.storyboard */,
 				D7A7029C226791CE00EF2903 /* Assets.xcassets */,
 				D7A7029E226791CE00EF2903 /* LaunchScreen.storyboard */,
 				D7A702A1226791CE00EF2903 /* Info.plist */,
-				D7A702C42267AE2200EF2903 /* NYCSchoolDataModel.swift */,
 			);
 			path = "20190417-SudhirKumar-NYCSchools";
 			sourceTree = "<group>";
@@ -136,14 +138,14 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
-		D7A702CC2267D92000EF2903 /* NYCSchoolDirectory */ = {
+		D7A702CC2267D92000EF2903 /* NYCSchoolDirectoryManage */ = {
 			isa = PBXGroup;
 			children = (
 				D7A702D22267DB2000EF2903 /* NYCSchoolDataProvider.swift */,
 				D7A702D62267EE3A00EF2903 /* NYCSchoolDirectoryFactory.swift */,
 				D7A702DA2267FEF500EF2903 /* NYCSchoolManager.swift */,
 			);
-			name = NYCSchoolDirectory;
+			name = NYCSchoolDirectoryManage;
 			sourceTree = "<group>";
 		};
 		D7A702DE22680CE700EF2903 /* DataSource */ = {
@@ -154,11 +156,12 @@
 			name = DataSource;
 			sourceTree = "<group>";
 		};
-		D7A702E32268186300EF2903 /* View */ = {
+		D7A702E32268186300EF2903 /* DataModal */ = {
 			isa = PBXGroup;
 			children = (
+				D7A702C42267AE2200EF2903 /* NYCSchoolDataModel.swift */,
 			);
-			name = View;
+			name = DataModal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +267,7 @@
 			files = (
 				D7A702D32267DB2000EF2903 /* NYCSchoolDataProvider.swift in Sources */,
 				D7A702E022680D3700EF2903 /* NYCSchoolDiretoryDataSource.swift in Sources */,
+				D7A702E52268F28C00EF2903 /* NYCSchoolSATDataViewController.swift in Sources */,
 				D7A702D72267EE3A00EF2903 /* NYCSchoolDirectoryFactory.swift in Sources */,
 				D7A702C52267AE2200EF2903 /* NYCSchoolDataModel.swift in Sources */,
 				D7A70298226791CD00EF2903 /* NYCSchoolHomeViewController.swift in Sources */,

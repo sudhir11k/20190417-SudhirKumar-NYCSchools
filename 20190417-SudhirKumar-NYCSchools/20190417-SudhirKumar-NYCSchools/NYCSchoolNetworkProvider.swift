@@ -17,7 +17,20 @@ enum NYCCustomError: Error {
     
     
 }
+
+enum NYCSchoolUrl : String{
+    case schoolDirectory
+    case dataSAT
     
+    var urlPath : String {
+        switch self {
+        case .schoolDirectory:
+            return "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
+        case .dataSAT:
+            return "https://data.cityofnewyork.us/resource/f9bf-2cp4.json"
+        }
+    }
+}
 
 class NYCSchoolNetworkProvider: NYCSchoolNetworkProviderProtocol {
     func callingNYCSchoolServiceApi(_ urlString: String, completionHandler: @escaping ((Data?, NYCCustomError?, Bool) -> ())) {

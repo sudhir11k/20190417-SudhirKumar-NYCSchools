@@ -39,7 +39,7 @@ class NYCSchoolNetworkProviderTests: XCTestCase {
         
         let callbackIsCalled = self.expectation(description: "callingNYCSchoolServiceApi should be called")
         
-        sut?.callingNYCSchoolServiceApi(urlStr, completionHandler: { (data, error, isSuccess) in
+        sut?.callingNYCSchoolServiceApi(urlStr, completionHandler: { (dataDict, error, isSuccess) in
             suceeded = isSuccess
             retunedError = error
             callbackIsCalled.fulfill()

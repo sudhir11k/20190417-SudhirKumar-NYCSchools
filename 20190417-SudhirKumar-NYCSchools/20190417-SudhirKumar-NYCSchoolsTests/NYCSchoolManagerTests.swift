@@ -32,7 +32,6 @@ class NYCSchoolManagerTests: XCTestCase {
 
     func test_getSchoolDirectoryList()  {
         
-        
         let expectation_GetDirVMList = self.expectation(description: "Manager should have Directory View Modal Array")
         
         var testError : NYCCustomError?

@@ -19,27 +19,62 @@ class NYCSchoolDiretoryDataSourceTests: XCTestCase {
         self.helperNYCManager = NYCSchoolManagerTests()
         self.helperNYCManager?.setUp()
         let expectationSetup = self.expectation(description: "NYCSchoolDiretoryDataSourceTests setUp")
-        self.helperNYCManager?.sut?.getSchoolDirectoryList(completionHandler: { (dataSource, customError) in
-            self.sut = dataSource
-            if let dataSource = self.sut{
-                DispatchQueue.main.sync {
-                     self.tableView = (MockTableView.mockTableView(withDataSource: dataSource) as! NYCSchoolDiretoryDataSourceTests.MockTableView)
-                    self.tableView?.reloadData()
-                    
+        
+        var dirVMArray : [NYCSchoolDirectoryViewModelProtocol]?
+        var satDataVMArray : [NYCSchoolSATViewModelProtocol]?
+        
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            var storedError: NSError?
+            let downloadGroup = DispatchGroup()
+            downloadGroup.enter()
+            self.helperNYCManager?.sut?.getSchoolDirectoryList(completionHandler: { (viewModal, error) in
+                
+                if error == nil{
+                    dirVMArray = viewModal
                 }
-               
+                downloadGroup.leave()
+            })
+            
+            downloadGroup.enter()
+            self.helperNYCManager?.sut?.getSatDataList(completionHandler: { (viewModal, error) in
+                if error == nil{
+                    satDataVMArray = viewModal
+                }
+                downloadGroup.leave()
+            })
+            
+            downloadGroup.notify(queue: DispatchQueue.main) {
+                
+                self.helperNYCManager?.sut?.getDataSourceForTableView(withDirectoryVMList: dirVMArray ?? [], withSATVMList: satDataVMArray ?? [], completionHandler: { (dataSource, customError) in
+                    self.sut = dataSource
+                    if let dataSource = self.sut{
+                        DispatchQueue.main.async {
+                            self.tableView = (MockTableView.mockTableView(withDataSource: dataSource) as! NYCSchoolDiretoryDataSourceTests.MockTableView)
+                            self.tableView?.reloadData()
+                            
+                        }
+                        
+                    }
+                    expectationSetup.fulfill()
+                })
             }
-            expectationSetup.fulfill()
-        })
+        }
+        
         waitForExpectations(timeout: 20, handler: nil)
     }
     
     func test_NumberOfSection(){
-        XCTAssertEqual(self.tableView?.numberOfSections, 1)
+        if self.tableView != nil{
+             XCTAssertEqual(self.tableView?.numberOfSections, 1)
+        }
+       
     }
     
     func test_NumberOfRowsInsection(){
+        if self.tableView != nil{
         XCTAssertEqual(self.tableView?.numberOfRows(inSection: 0), sut?.directoryVMList?.count ?? 0)
+        }
     }
     
     

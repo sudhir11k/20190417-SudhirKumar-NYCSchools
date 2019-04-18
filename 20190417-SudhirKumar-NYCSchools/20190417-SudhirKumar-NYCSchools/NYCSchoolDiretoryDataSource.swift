@@ -10,8 +10,14 @@ import Foundation
 import UIKit
 
 
+protocol NYCSchoolDataSourceDelegate{
+    func getSatDataOnCellSelection(satData:NYCSchoolSATViewModelProtocol?)
+}
+
 class NYCSchoolDiretoryDataSource : NSObject, UITableViewDataSource{
     var directoryVMList : [NYCSchoolDirectoryViewModelProtocol]?
+    var satDataVMList : [NYCSchoolSATViewModelProtocol]?
+    var delegate : NYCSchoolDataSourceDelegate?
     let directoryCellIdentifier = "NYCSchoolDirectoryCellIdentifier"
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -30,6 +36,8 @@ class NYCSchoolDiretoryDataSource : NSObject, UITableViewDataSource{
         if let directoryVM = directoryVMList?[indexPath.row]{
             let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: directoryCellIdentifier)
             cell.textLabel?.text = directoryVM.school_name
+            cell.accessoryType = .disclosureIndicator
+            cell.selectionStyle = .none
             return cell
         }
         return UITableViewCell()
@@ -39,6 +47,19 @@ class NYCSchoolDiretoryDataSource : NSObject, UITableViewDataSource{
 
 
 extension NYCSchoolDiretoryDataSource : UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let directoryVM = directoryVMList?[indexPath.row]{
+            let dbn = directoryVM.dbn
+            if let satData = satDataVMList?.first(where: {$0.dbn == dbn}) {
+                print(satData)
+                self.delegate?.getSatDataOnCellSelection(satData: satData)
+            }else{
+                self.delegate?.getSatDataOnCellSelection(satData: nil)
+            }
+ 
+        }
+    }
     
    
 }
